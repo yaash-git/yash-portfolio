@@ -1,0 +1,85 @@
+.particle-experiment {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  overflow: hidden;
+  color: #f2f0eb;
+  background: #08090b;
+}
+
+.particle-experiment__portrait {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  width: 92vw;
+  height: 78svh;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  filter: grayscale(1);
+}
+
+.particle-experiment__canvas {
+  position: absolute !important;
+  inset: 0;
+  z-index: 1;
+}
+
+.particle-experiment__header,
+.particle-experiment__footer {
+  position: absolute;
+  z-index: 2;
+  right: clamp(1.25rem, 5.5vw, 5.5rem);
+  left: clamp(1.25rem, 5.5vw, 5.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.particle-experiment__header {
+  top: 2rem;
+}
+
+.particle-experiment__back {
+  color: inherit;
+  text-decoration: none;
+}
+
+.particle-experiment__back span {
+  margin-right: 0.55rem;
+  color: #c9c4bb;
+}
+
+.particle-experiment__back:hover,
+.particle-experiment__back:focus-visible {
+  color: #c9c4bb;
+}
+
+.particle-experiment__index,
+.particle-experiment__footer span {
+  margin: 0;
+  color: rgb(242 240 235 / 52%);
+}
+
+.particle-experiment__footer {
+  bottom: 2rem;
+}
+
+@media (max-width: 600px) {
+  .particle-experiment__header,
+  .particle-experiment__footer {
+    right: 1.25rem;
+    left: 1.25rem;
+    font-size: 0.54rem;
+    letter-spacing: 0.12em;
+  }
+
+  .particle-experiment__index {
+    max-width: 8rem;
+    text-align: right;
+  }
+}

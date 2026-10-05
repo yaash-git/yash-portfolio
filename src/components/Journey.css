@@ -1,0 +1,141 @@
+.journey {
+  --journey-gutter: clamp(1.25rem, 8vw, 8rem);
+  min-height: 100svh;
+  padding: clamp(5rem, 11vw, 10rem) var(--journey-gutter);
+  color: #f2f0eb;
+  background: #08090b;
+}
+
+.journey__intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.95fr);
+  align-items: end;
+  column-gap: clamp(2rem, 8vw, 9rem);
+  row-gap: 1.5rem;
+  max-width: 88rem;
+  margin: 0 auto clamp(4rem, 9vw, 8rem);
+}
+
+.journey__eyebrow {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: rgb(242 240 235 / 52%);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.journey__intro h2 {
+  max-width: 12ch;
+  margin: 0;
+  font-size: clamp(3.25rem, 8.5vw, 8rem);
+  font-weight: 500;
+  letter-spacing: -0.075em;
+  line-height: 0.88;
+}
+
+.journey__copy {
+  max-width: 34rem;
+  margin: 0 0 0.3rem;
+  color: rgb(242 240 235 / 74%);
+  font-size: clamp(1rem, 1.45vw, 1.3rem);
+  line-height: 1.8;
+}
+
+.journey__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 88rem;
+  margin: 0 auto;
+  border-top: 1px solid rgb(242 240 235 / 24%);
+}
+
+.journey__card {
+  position: relative;
+  min-height: 12rem;
+  padding: clamp(1.5rem, 3vw, 2.75rem) clamp(1rem, 2.5vw, 2.25rem) clamp(1.75rem, 3vw, 3rem) 0;
+  border-bottom: 1px solid rgb(242 240 235 / 24%);
+  transition: border-color 220ms ease, transform 220ms ease;
+}
+
+.journey__card:nth-child(odd) {
+  border-right: 1px solid rgb(242 240 235 / 16%);
+}
+
+.journey__card:nth-child(even) {
+  padding-left: clamp(1rem, 2.5vw, 2.25rem);
+}
+
+.journey__card:hover {
+  border-bottom-color: rgb(242 240 235 / 58%);
+  transform: translateY(-3px);
+}
+
+.journey__number {
+  color: rgb(242 240 235 / 42%);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+}
+
+.journey__card h3 {
+  margin: 2.1rem 0 0.55rem;
+  font-size: clamp(1.1rem, 1.8vw, 1.55rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.journey__card p {
+  margin: 0;
+  color: rgb(242 240 235 / 62%);
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+  line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+  .journey {
+    min-height: auto;
+    padding-top: 5.5rem;
+    padding-bottom: 6rem;
+  }
+
+  .journey__intro {
+    grid-template-columns: 1fr;
+    row-gap: 1.35rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .journey__eyebrow {
+    grid-column: auto;
+  }
+
+  .journey__intro h2 {
+    max-width: 9ch;
+    font-size: clamp(3.25rem, 14vw, 6rem);
+  }
+
+  .journey__copy {
+    max-width: 36rem;
+    font-size: 1rem;
+  }
+
+  .journey__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .journey__card,
+  .journey__card:nth-child(even) {
+    min-height: 10.5rem;
+    padding: 1.5rem 0 1.75rem;
+    border-right: 0;
+  }
+
+  .journey__card h3 {
+    margin-top: 1.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey__card {
+    transition: none;
+  }
+}

@@ -1,0 +1,71 @@
+.portfolio-preloader {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: #050505;
+  color: #eeede9;
+  opacity: 1;
+}
+
+.portfolio-preloader--fading { animation: portfolio-preloader-fade 650ms ease forwards; }
+
+.portfolio-preloader__window {
+  width: min(100%, 31rem);
+  overflow: hidden;
+  border: 1px solid rgb(238 237 233 / 18%);
+  border-radius: 0.45rem;
+  background: #0b0b0b;
+  box-shadow: 0 1.5rem 6rem rgb(0 0 0 / 55%);
+}
+
+.portfolio-preloader__titlebar {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.7rem;
+  padding: 0 1rem;
+  border-bottom: 1px solid rgb(238 237 233 / 12%);
+  background: #111;
+}
+
+.portfolio-preloader__dot { width: 0.52rem; height: 0.52rem; border-radius: 50%; }
+.portfolio-preloader__dot--red { background: #ef6258; }
+.portfolio-preloader__dot--yellow { background: #e8bc4d; }
+.portfolio-preloader__dot--green { background: #55bb67; }
+.portfolio-preloader__title { margin-left: 0.65rem; color: #888; font: 500 0.62rem/1 Arial, sans-serif; letter-spacing: 0.15em; }
+
+.portfolio-preloader__terminal {
+  min-height: 13rem;
+  padding: 1.25rem 1.4rem 1.5rem;
+  font: 400 clamp(0.78rem, 2.8vw, 0.9rem)/1.9 ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.portfolio-preloader__line { margin: 0; color: #d1d0cb; animation: portfolio-line-in 260ms ease both; }
+.portfolio-preloader__line:last-of-type { color: #f4f3ef; }
+.portfolio-preloader__prompt { color: #aaa9a5; }
+.portfolio-preloader__cursor { display: inline-block; width: 0.48rem; height: 1rem; margin-top: 0.2rem; background: #d1d0cb; vertical-align: middle; animation: portfolio-cursor-blink 800ms steps(2, start) infinite; }
+
+@keyframes portfolio-line-in {
+  from { opacity: 0; transform: translateY(0.25rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes portfolio-preloader-fade {
+  to { opacity: 0; visibility: hidden; }
+}
+
+@keyframes portfolio-cursor-blink { to { visibility: hidden; } }
+
+@media (max-width: 480px) {
+  .portfolio-preloader__terminal { min-height: 12rem; padding: 1rem; }
+  .portfolio-preloader__titlebar { min-height: 2.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-preloader--fading,
+  .portfolio-preloader__line,
+  .portfolio-preloader__cursor { animation: none; }
+}
