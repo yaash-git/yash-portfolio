@@ -2,7 +2,7 @@ import { Suspense } from 'react'
 import PhotoParticleLayer from './PhotoParticleLayer.jsx'
 import './PhotoParticleExperiment.css'
 
-const IMAGE_PATH = '/assets/yash-hero.jpg'
+const IMAGE_PATH = '/assets/yash-hero.webp'
 
 function PhotoParticleExperiment() {
   return (

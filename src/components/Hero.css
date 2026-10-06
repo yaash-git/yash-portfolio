@@ -21,7 +21,7 @@
 
 .hero__photo {
   z-index: -2;
-  background: url('/assets/yash-hero.jpg') center / cover no-repeat;
+  background: url('/assets/yash-hero.webp') center / cover no-repeat;
   will-change: transform, opacity;
 }
 

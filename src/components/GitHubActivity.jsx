@@ -17,6 +17,7 @@ function GitHubActivity() {
 
   useEffect(() => {
     const controller = new AbortController()
+    const section = sectionRef.current
 
     async function loadGitHubData() {
       try {
@@ -45,8 +46,23 @@ function GitHubActivity() {
       }
     }
 
-    loadGitHubData()
-    return () => controller.abort()
+    if (!section || !('IntersectionObserver' in window)) {
+      loadGitHubData()
+      return () => controller.abort()
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return
+
+      observer.disconnect()
+      loadGitHubData()
+    }, { rootMargin: '300px 0px' })
+
+    observer.observe(section)
+    return () => {
+      observer.disconnect()
+      controller.abort()
+    }
   }, [])
 
   useEffect(() => {

@@ -2,7 +2,7 @@ import { useMemo, useRef } from 'react'
 import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber'
 import { BufferGeometry, Float32BufferAttribute, TextureLoader } from 'three'
 
-const IMAGE_PATH = '/assets/yash-hero.jpg'
+const IMAGE_PATH = '/assets/yash-hero.webp'
 const SAMPLE_WIDTH = 160
 
 function PortraitParticles({ fit, imagePositionX, strength }) {
